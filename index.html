@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff0f5;
+            font-family: 'Dancing Script', cursive;
+            position: relative;
+            overflow: hidden;
+        }
+        .card {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            height: auto;
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+            z-index: 2;
+            transform: rotate(-3deg);
+            animation: float 3s ease-in-out infinite;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1);
+            z-index: -1;
+            border-radius: 30px;
+            opacity: 0.1;
+        }
+        .decorations span,
+        .hearts span {
+            position: absolute;
+            font-size: 2rem;
+            animation: sway 5s ease-in-out infinite;
+        }
+        .flower1 { top: 5%; left: 5%; }
+        .flower2 { top: 15%; right: 5%; }
+        .flower3 { bottom: 10%; left: 10%; }
+        .flower4 { bottom: 20%; right: 15%; }
+        .flower5 { top: 10%; right: 20%; }
+        .heart1 { top: 15%; left: 20%; }
+        .heart2 { top: 30%; right: 25%; }
+        .heart3 { bottom: 20%; left: 30%; }
+        .message {
+            text-align: center;
+            color: #8b0000;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ff69b4, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+        .ribbon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+        }
+        .ribbon::before {
+            content: '♥';
+            position: absolute;
+            font-size: 16px;
+            color: #fff;
+            background: #ff69b4;
+            padding: 8px 20px;
+            transform: rotate(45deg);
+            right: -25px;
+            top: 15px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-10px) rotate(-5deg); }
+        }
+        @keyframes sway {
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(10deg); }
+        }
+        .sparkles span {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: gold;
+            border-radius: 50%;
+            animation: sparkle 1s infinite;
+        }
+        @keyframes sparkle {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .card {
+                padding: 15px;
+            }
+            .decorations span,
+            .hearts span {
+                font-size: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            .ribbon {
+                width: 60px;
+                height: 60px;
+            }
+            .ribbon::before {
+                font-size: 14px;
+                padding: 6px 15px;
+                right: -20px;
+                top: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 10px;
+            }
+            .decorations span,
+            .hearts span {
+                font-size: 1.2rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 0.8rem;
+            }
+            .ribbon {
+                width: 50px;
+                height: 50px;
+            }
+            .ribbon::before {
+                font-size: 12px;
+                padding: 5px 10px;
+                right: -15px;
+                top: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorations">
+        <span class="flower1">🌸</span>
+        <span class="flower2">🌹</span>
+        <span class="flower3">🌼</span>
+        <span class="flower4">💮</span>
+        <span class="flower5">🏵️</span>
+    </div>
+    <div class="hearts">
+        <span class="heart1">💖</span>
+        <span class="heart2">💗</span>
+        <span class="heart3">💝</span>
+    </div>
+    <div class="card">
+        <div class="ribbon"></div>
+        <div class="message">
+            <h1>My Dearest Love</h1>
+            <p>The universe must have glitched the day we met, because how else do I explain falling this hard, this fast?</p>
+            <p>You’re the chaos I never knew I needed, the distraction I’ll never recover from, and the only algorithm my heart refuses to debug.</p>
+            <p>So, what do you say? Be mine and let’s crash the system together..</p>
+            <p style="font-size: 1.2em;">💕 Your Beloved 💕</p>
+        </div>
+    </div>
+    <div class="sparkles">
+        <span style="top: 15%; left: 30%"></span>
+        <span style="top: 40%; right: 25%"></span>
+        <span style="bottom: 20%; left: 45%"></span>
+    </div>
+</body>
+</html>
